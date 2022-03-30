@@ -53,8 +53,8 @@ void DES::keygen(ui64 key)
         // key schedule, shifting Ci and Di
         for (ui8 j = 0; j < ITERATION_SHIFT[i]; j++)
         {
-            C = (0x0fffffff & (C << 1)) | (0x00000001 & (C >> 27));
-            D = (0x0fffffff & (D << 1)) | (0x00000001 & (D >> 27));
+            C = (0x0fffffff & (C << 1)) | (0x00000001 & (C >> 27)) ;
+            D = (0x0fffffff & (D << 1)) | (0x00000001 & (D >> 27)) ;
         }
 
         ui64 permuted_choice_2 = (((ui64) C) << 28) | (ui64) D;
